@@ -32,7 +32,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <html lang='en' suppressHydrationWarning={true}>
                 <body
                     className={cn(
-                        'min-h-screen antialiased',
+                        'font-livvic antialiased',
                         fontAveria.variable,
                         fontLivvic.variable
                     )}
