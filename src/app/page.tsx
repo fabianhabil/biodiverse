@@ -9,6 +9,7 @@ export default function IndexPage() {
                     autoPlay
                     loop
                     muted
+                    playsInline
                     style={{
                         position: 'absolute',
                         width: '100%',
