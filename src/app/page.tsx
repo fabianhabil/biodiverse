@@ -1,10 +1,28 @@
+'use client';
+
 import { Button } from '@/components/ui/button';
+import WindowSize from '@/hooks/windowSize';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function IndexPage() {
+    const windowSize = WindowSize();
+
+    const [mounted, setMounted] = useState<boolean>(false);
+
+    useEffect(() => {
+        setMounted(() => true);
+    }, []);
+
+    if (!mounted) return null;
+
     return (
         <>
-            <div className='relative h-screen w-screen bg-[#F6EFE8]'>
+            <div
+                className={
+                    'relative h-screen w-screen overflow-hidden overscroll-none bg-[#F6EFE7]'
+                }
+            >
                 <video
                     autoPlay
                     loop
@@ -13,15 +31,21 @@ export default function IndexPage() {
                     style={{
                         position: 'absolute',
                         width: '100%',
-                        height: '100%',
+                        height: `${windowSize.innerHeight}px`,
                         zIndex: 10,
                         aspectRatio: 1,
                         backgroundPosition: 'absolute',
-                        backgroundColor: '#F6EFE8'
+                        backgroundColor: '#F6EFE7'
                     }}
+                    className='scale-150 md:scale-[.85]'
                     src='/video/biodiverse.mp4'
                 />
-                <div className='absolute z-20 flex h-screen w-full flex-col items-center justify-between py-8'>
+                <div
+                    className={
+                        'absolute z-20 flex w-full flex-col items-center justify-between py-8'
+                    }
+                    style={{ height: `${windowSize.innerHeight}px` }}
+                >
                     <div className='flex flex-row items-start gap-8 px-8'>
                         <Image
                             src='/logo/binus.png'
