@@ -1,7 +1,8 @@
 import '@/styles/globals.css';
 import { TailwindIndicator } from '@/components/atoms/TailwindIndicator/TailwindIndicator';
 import { siteConfig } from '@/components/constants/site';
-import { fontAveria, fontLivvic } from '@/lib/fonts';
+import { Toaster } from '@/components/ui/toaster';
+import { fontAcumin, fontAveria, fontLivvic, fontLucette } from '@/lib/fonts';
 import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
 
@@ -34,12 +35,15 @@ export default function RootLayout({ children }: RootLayoutProps) {
                     className={cn(
                         'font-livvic antialiased',
                         fontAveria.variable,
-                        fontLivvic.variable
+                        fontLivvic.variable,
+                        fontAcumin.variable,
+                        fontLucette.variable
                     )}
                     suppressHydrationWarning={true}
                 >
                     <div>{children}</div>
                     <TailwindIndicator />
+                    <Toaster />
                 </body>
             </html>
         </>

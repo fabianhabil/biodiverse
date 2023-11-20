@@ -45,7 +45,7 @@ export default function IndexPage() {
                 {/* <p className='absolute right-[27%] top-[65%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-livvic font-semibold text-black md:top-[72%] lg:top-[67%] lg:text-xl'>
                     An Interactive Exhibition
                 </p> */}
-                <p className='absolute left-1/2 top-[60%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-livvic text-xl font-semibold text-[#5A1669] sm:text-2xl md:top-[72%] lg:top-[71%] lg:text-3xl'>
+                <p className='absolute left-1/2 top-[62%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-livvic text-xl font-semibold text-[#5A1669] sm:text-2xl md:top-[72%] lg:top-[71%] lg:text-3xl'>
                     Embrace Your Entrepreneurial Journey
                 </p>
                 <div
