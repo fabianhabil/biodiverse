@@ -91,6 +91,7 @@ export const ExhibitionContextProvider = ({
             const questionPos1Data = JSON.parse(
                 localStorage.getItem('questionPos1')!
             );
+
             if (questionPos1Data) setQuestionPos1(() => questionPos1Data);
 
             const participantSkillData = JSON.parse(

@@ -40,7 +40,7 @@ const QuestionPos = ({
                         </p>
                     </>
                 )}
-                <div className='flex w-[300px] flex-col gap-4'>
+                <div className='flex w-[320px] flex-col gap-4'>
                     {questionPos[stepperQuestion].choice.map((data, index) => {
                         const questionData = questionPos[stepperQuestion];
 
@@ -66,7 +66,7 @@ const QuestionPos = ({
                                     ]);
                                 }}
                             >
-                                <p className='text-center text-lg'>
+                                <p className='text-center text-base md:text-lg'>
                                     {data.answer}
                                 </p>
                             </div>
@@ -78,7 +78,7 @@ const QuestionPos = ({
                         <div />
                     ) : (
                         <Button
-                            className='flex rounded-[20px] bg-[#727902] hover:bg-[#727902]/80'
+                            className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
                             onClick={() =>
                                 setStepperQuestion((state) => state - 1)
                             }
@@ -88,7 +88,7 @@ const QuestionPos = ({
                         </Button>
                     )}
                     <Button
-                        className='flex rounded-[20px] bg-[#727902] hover:bg-[#727902]/80'
+                        className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
                         disabled={questionPos[stepperQuestion].answer === null}
                         onClick={() => {
                             if (stepperQuestion + 1 === questionPos.length) {

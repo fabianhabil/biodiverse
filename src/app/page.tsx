@@ -52,7 +52,7 @@ export default function IndexPage() {
                     className={
                         'absolute z-20 flex w-full flex-col items-center justify-between py-8'
                     }
-                    style={{ height: `${windowSize.innerHeight}px` }}
+                    style={{ minHeight: `${windowSize.innerHeight}px` }}
                 >
                     <div className='flex flex-row items-start gap-8 px-8'>
                         <Image

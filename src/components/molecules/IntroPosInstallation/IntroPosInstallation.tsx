@@ -37,18 +37,18 @@ const IntroPosInstallation = ({
                     {posInfo.description}
                 </p>
                 <Input
-                    className='mx-auto w-[170px] rounded-[32px] bg-[#BAC24A] text-center font-bold text-white placeholder:text-white md:w-[250px]'
+                    className='mx-auto w-[170px] rounded-[32px] bg-[#BAC24A] text-center font-lucette font-bold text-white placeholder:font-lucette placeholder:text-white md:w-[250px]'
                     placeholder='Enter Passcode'
                     onChange={(e) => setInputPassword(() => e.target.value)}
                 />
                 <Button
-                    className='mx-auto rounded-[32px] bg-[#727902] px-10 py-4 text-center text-xl font-bold text-white hover:bg-[#727902]/80'
+                    className='mx-auto rounded-[32px] bg-[#727902] px-10 py-4 text-center font-lucette text-lg font-bold text-white hover:bg-[#727902]/80'
                     onClick={() => {
                         if (inputPassword === posInfo.password) {
                             callbackPasswordCorrect();
                         } else {
                             toast({
-                                title: 'Wrong Pos Password',
+                                title: 'Wrong Post Password',
                                 variant: 'destructive'
                             });
                         }

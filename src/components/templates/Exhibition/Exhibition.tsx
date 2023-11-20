@@ -46,7 +46,7 @@ const ExhibitionPage = () => {
                 {pos === 0 ? <FormWelcome windowSize={windowSize} /> : null}
                 {pos === 1 ? <Pos1 /> : null}
                 {pos === 2 ? <Pos2 /> : null}
-                <div className='flex flex-row items-center gap-4'>
+                <div className='mb-2 mt-6 flex flex-row items-center gap-4'>
                     {photoList.map((data, index) => {
                         return (
                             <Image
