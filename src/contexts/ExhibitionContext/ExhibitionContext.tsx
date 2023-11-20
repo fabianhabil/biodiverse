@@ -1,6 +1,9 @@
 'use client';
 
-import { listQuestionPos1 } from '@/components/constants/question';
+import {
+    listQuestionPos1,
+    listQuestionPos4
+} from '@/components/constants/question';
 import { skillConstants } from '@/components/constants/skill';
 import type {
     ParticipantDataType,
@@ -35,11 +38,16 @@ export const ExhibitionContextProvider = ({
 
     const [onGoing, setOnGoing] = useState<boolean>(false);
 
-    const [participantSkill, setParticipantSkill] =
-        useState<ParticipantSkillType>(skillConstants);
-
     const [questionPos1, setQuestionPos1] =
         useState<QuestionType[]>(listQuestionPos1);
+
+    const [correctCountPos2, setCorrectCountPos2] = useState<number>(0);
+
+    const [questionPos4, setQuestionPos4] =
+        useState<QuestionType[]>(listQuestionPos4);
+
+    const [participantSkill, setParticipantSkill] =
+        useState<ParticipantSkillType>(skillConstants);
 
     const setParticipantSkillState = (
         newParticipantSkill: ParticipantSkillType
@@ -54,6 +62,16 @@ export const ExhibitionContextProvider = ({
     const setQuestionPos1State = (newQuestion: QuestionType[]) => {
         setQuestionPos1(() => newQuestion);
         localStorage.setItem('questionPos1', JSON.stringify(newQuestion));
+    };
+
+    const setCorrectCountPos2State = (newCount: number) => {
+        setCorrectCountPos2(() => newCount);
+        localStorage.setItem('correctCountPos2', `${newCount}`);
+    };
+
+    const setQuestionPos4State = (newQuestion: QuestionType[]) => {
+        setQuestionPos4(() => newQuestion);
+        localStorage.setItem('questionPos4', JSON.stringify(newQuestion));
     };
 
     const setPosState = (newPos: number) => {
@@ -94,6 +112,19 @@ export const ExhibitionContextProvider = ({
 
             if (questionPos1Data) setQuestionPos1(() => questionPos1Data);
 
+            const currentCountPos2Data = JSON.parse(
+                localStorage.getItem('currentCountPos2')!
+            );
+
+            if (currentCountPos2Data)
+                setCorrectCountPos2(() => currentCountPos2Data);
+
+            const questionPos4Data = JSON.parse(
+                localStorage.getItem('questionPos4')!
+            );
+
+            if (questionPos4Data) setQuestionPos4(() => questionPos4Data);
+
             const participantSkillData = JSON.parse(
                 localStorage.getItem('participantSkill')!
             );
@@ -117,7 +148,8 @@ export const ExhibitionContextProvider = ({
         localStorage.removeItem('pos');
         localStorage.removeItem('participantData');
         localStorage.removeItem('questionPos1');
-        localStorage.removeItem('questionPos2');
+        localStorage.removeItem('correctCountPos2');
+        localStorage.removeItem('questionPos4');
         window.location.reload();
     };
 
@@ -134,7 +166,11 @@ export const ExhibitionContextProvider = ({
         setParticipantSkillState,
         setQuestionPos1State,
         onGoing,
-        resetExhibition
+        resetExhibition,
+        questionPos4,
+        setQuestionPos4State,
+        correctCountPos2,
+        setCorrectCountPos2State
     };
 
     return (

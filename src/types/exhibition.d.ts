@@ -14,6 +14,10 @@ export interface ExhibitionContextType {
     setQuestionPos1State: (_arg: QuestionType[]) => void;
     onGoing: boolean;
     resetExhibition: () => void;
+    questionPos4: QuestionType[];
+    setQuestionPos4State: (_arg: QuestionType[]) => void;
+    correctCountPos2: number;
+    setCorrectCountPos2State: (_arg: number) => void;
 }
 
 export interface ParticipantDataType {

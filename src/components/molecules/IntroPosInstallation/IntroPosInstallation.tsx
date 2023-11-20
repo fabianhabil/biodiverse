@@ -42,7 +42,7 @@ const IntroPosInstallation = ({
                     onChange={(e) => setInputPassword(() => e.target.value)}
                 />
                 <Button
-                    className='mx-auto rounded-[32px] bg-[#727902] px-10 py-4 text-center font-lucette text-lg font-bold text-white hover:bg-[#727902]/80'
+                    className='mx-auto w-[170px] rounded-[32px] bg-[#727902] px-10 py-4 text-center font-lucette text-lg font-bold text-white hover:bg-[#727902]/80 md:w-[250px]'
                     onClick={() => {
                         if (inputPassword === posInfo.password) {
                             callbackPasswordCorrect();

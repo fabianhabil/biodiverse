@@ -18,7 +18,6 @@ const QuestionPos = ({
     callbackFinishPos
 }: QuestionPosType) => {
     const [stepperQuestion, setStepperQuestion] = useState<number>(0);
-    console.log(questionPos);
 
     return (
         <>

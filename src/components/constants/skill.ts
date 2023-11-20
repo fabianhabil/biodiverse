@@ -10,7 +10,7 @@ export const skillConstants: ParticipantSkillType = {
     },
     innovative: { name: 'Analytical Thinking and Innovative ', value: 0 },
     complexProblemSolver: {
-        name: 'Decision Making. / Complex Problem Solver ',
+        name: 'Decision Making / Complex Problem Solver ',
         value: 0
     },
     riskTaking: { name: 'Risk Taking', value: 0 },
