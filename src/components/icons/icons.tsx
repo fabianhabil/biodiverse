@@ -6,7 +6,9 @@ import {
     type Icon as LucideIcon,
     Linkedin,
     Menu,
-    Instagram
+    Instagram,
+    ChevronLeft,
+    ChevronRight
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -17,6 +19,8 @@ export const Icons = {
     twitter: Twitter,
     linkedIn: Linkedin,
     menu: Menu,
+    leftArrow: ChevronLeft,
+    rightArrow: ChevronRight,
     instagram: Instagram,
     people: (props: LucideProps) => (
         <svg
