@@ -63,7 +63,9 @@ module.exports = {
             fontFamily: {
                 sans: ['var(--font-sans)', ...fontFamily.sans],
                 livvic: ['var(--font-livvic)'],
-                averia: ['var(--font-averia)']
+                averia: ['var(--font-averia)'],
+                acumin: ['var(--font-acumin)'],
+                lucette: ['var(--font-lucette)']
             },
             keyframes: {
                 'accordion-down': {
