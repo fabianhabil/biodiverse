@@ -18,6 +18,9 @@ export interface ExhibitionContextType {
     setQuestionPos4State: (_arg: QuestionType[]) => void;
     correctCountPos2: number;
     setCorrectCountPos2State: (_arg: number) => void;
+    selectedRoleModel: RoleModelType;
+    setSelectedRoleModelState: (_arg: RoleModelType) => void;
+    populateParticipantSkillData: () => void;
 }
 
 export interface ParticipantDataType {
@@ -59,6 +62,25 @@ export interface QuestionType {
 
 export interface AnswerType {
     answer: string;
+    value:
+        | 'empathy'
+        | 'visionary'
+        | 'criticalThinking'
+        | 'creativeThinking'
+        | 'innovative'
+        | 'complexProblemSolver'
+        | 'riskTaking'
+        | 'persistence'
+        | 'resilience'
+        | 'leadership'
+        | 'planningAndOrganizing'
+        | 'communicative'
+        | 'teamwork';
+}
+
+export interface RoleModelType {
+    src: string;
+    name: string;
     value:
         | 'empathy'
         | 'visionary'

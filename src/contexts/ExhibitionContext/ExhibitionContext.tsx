@@ -9,7 +9,8 @@ import type {
     ParticipantDataType,
     ExhibitionContextType,
     QuestionType,
-    ParticipantSkillType
+    ParticipantSkillType,
+    RoleModelType
 } from '@/types/exhibition';
 import { createContext, useState } from 'react';
 
@@ -48,6 +49,20 @@ export const ExhibitionContextProvider = ({
 
     const [participantSkill, setParticipantSkill] =
         useState<ParticipantSkillType>(skillConstants);
+
+    const [selectedRoleModel, setSelectedRoleModel] = useState<RoleModelType>({
+        src: '',
+        name: '',
+        value: 'communicative'
+    });
+
+    const setSelectedRoleModelState = (newSelectedRoleModel: RoleModelType) => {
+        setSelectedRoleModel(() => newSelectedRoleModel);
+        localStorage.setItem(
+            'selectedRoleModel',
+            JSON.stringify(newSelectedRoleModel)
+        );
+    };
 
     const setParticipantSkillState = (
         newParticipantSkill: ParticipantSkillType
@@ -125,6 +140,14 @@ export const ExhibitionContextProvider = ({
 
             if (questionPos4Data) setQuestionPos4(() => questionPos4Data);
 
+            const selectedRoleModelData = JSON.parse(
+                localStorage.getItem('selectedRoleModel')!
+            )!;
+
+            if (selectedRoleModelData) {
+                setSelectedRoleModel(() => selectedRoleModelData);
+            }
+
             const participantSkillData = JSON.parse(
                 localStorage.getItem('participantSkill')!
             );
@@ -135,6 +158,31 @@ export const ExhibitionContextProvider = ({
             console.log(e);
             setPosState(0);
         }
+    };
+
+    const populateParticipantSkillData = () => {
+        const tempData = { ...participantSkill };
+
+        questionPos1.forEach((data) => {
+            tempData[data.choice[data.answer!].value].value++;
+        });
+
+        questionPos4.forEach((data) => {
+            tempData[data.choice[data.answer!].value].value++;
+        });
+
+        tempData[selectedRoleModel.value].value++;
+
+        setParticipantSkillState(tempData);
+
+        // const keysSorted = Object.keys(tempData).sort((a, b) => {
+        //     return (
+        //         tempData[b as keyof ParticipantSkillType].value -
+        //         tempData[a as keyof ParticipantSkillType].value
+        //     );
+        // });
+
+        // return keysSorted;
     };
 
     const initiate = () => {
@@ -170,7 +218,10 @@ export const ExhibitionContextProvider = ({
         questionPos4,
         setQuestionPos4State,
         correctCountPos2,
-        setCorrectCountPos2State
+        setCorrectCountPos2State,
+        selectedRoleModel,
+        setSelectedRoleModelState,
+        populateParticipantSkillData
     };
 
     return (

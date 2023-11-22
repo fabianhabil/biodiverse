@@ -10,7 +10,7 @@ const photoList = [
 const FooterExhibition = () => {
     return (
         <>
-            <div className='mb-2 mt-6 flex flex-row items-center gap-4'>
+            <div className='mb-2 mt-8 flex flex-row items-center gap-4'>
                 {photoList.map((data, index) => {
                     return (
                         <Image
