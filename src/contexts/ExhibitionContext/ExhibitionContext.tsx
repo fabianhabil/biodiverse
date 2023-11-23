@@ -53,7 +53,8 @@ export const ExhibitionContextProvider = ({
     const [selectedRoleModel, setSelectedRoleModel] = useState<RoleModelType>({
         src: '',
         name: '',
-        value: 'communicative'
+        value: 'communicative',
+        pos7: ''
     });
 
     const [saved, setSaved] = useState<boolean>(false);
