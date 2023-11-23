@@ -46,7 +46,9 @@ export default function IndexPage() {
                     An Interactive Exhibition
                 </p> */}
                 <div className='absolute left-1/2 top-[65%] z-10 flex w-max -translate-x-1/2 -translate-y-1/2 flex-col md:top-[72%] lg:top-[71%]'>
-                    <p className='ml-auto font-acumin'>an Interactive Exhibition</p>
+                    <p className='ml-auto font-acumin'>
+                        an Interactive Exhibition
+                    </p>
                     <p className='text-center font-acumin text-xl font-semibold text-[#5A1669] sm:text-2xl lg:text-3xl'>
                         Embrace Your Entrepreneurial Journey
                     </p>
@@ -85,7 +87,7 @@ export default function IndexPage() {
                     </div>
                     <div className='flex flex-col gap-8'>
                         <Button
-                            className='rounded-[30px] bg-[#727902] p-6 font-acumin text-lg font-bold text-white hover:bg-[#727902]/80 sm:px-12 sm:text-xl md:p-8 md:px-16 md:text-2xl'
+                            className='rounded-[30px] bg-[#639F55] p-6 font-acumin text-lg font-bold text-white hover:bg-[#639F55]/80 sm:px-12 sm:text-xl md:p-8 md:px-16 md:text-2xl'
                             onClick={() => router.replace('/exhibition')}
                         >
                             Get Started!
