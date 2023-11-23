@@ -51,7 +51,7 @@ const IntroPosInstallation = ({
                 <Button
                     className='mx-auto w-[170px] rounded-[16px] bg-[#639F55] px-10 py-4 text-center font-acumin text-lg text-white hover:bg-[#639F55]/80 md:w-[250px]'
                     onClick={() => {
-                        if (inputPassword === posInfo.password) {
+                        if (inputPassword.toLowerCase() === posInfo.password) {
                             callbackPasswordCorrect();
                         } else {
                             toast({
