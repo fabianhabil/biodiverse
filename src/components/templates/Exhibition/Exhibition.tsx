@@ -28,7 +28,7 @@ const ExhibitionPage = () => {
     return (
         <>
             <div
-                style={{ minHeight: windowSize.innerHeight }}
+                style={{ minHeight: windowSize.innerHeight, width: '100%' }}
                 className='flex flex-col items-center justify-between bg-[#FFF7EF] p-4'
             >
                 <div />
