@@ -27,6 +27,13 @@ const menuData = [
         vibe: 'When acid element and red color (it refers to chaotic). Connected with the sweet element that binds flavor, appearing a balanced taste that makes us feel wellbeing, have a spirit, and glow differently (with addition of the gold element to the brew).'
     }
 ];
+
+const menuDataIndex = [
+    [4, 3],
+    [5, 0, 1],
+    [6, 7, 9]
+];
+
 const ingredientsData = [
     {
         src: '/pos3/5.png',
@@ -91,30 +98,35 @@ const Pos3 = () => {
             ) : (
                 <>
                     <div className='flex w-[350px] flex-col gap-4'>
-                        <div className='grid grid-cols-5 grid-rows-3 items-start justify-center gap-4'>
-                            {ingredientsData.map((data, index) => {
-                                return (
-                                    <div
-                                        className={cn(
-                                            'flex cursor-pointer flex-col items-center gap-4'
-                                        )}
-                                        key={index}
-                                    >
-                                        <Image
-                                            src={data.src}
-                                            alt={data.name}
-                                            width={0}
-                                            height={0}
-                                            sizes='100%'
-                                            quality={20}
-                                            className={cn('h-auto w-[100px]')}
-                                        />
-                                        <p className='w-[85%] text-center font-acumin text-xs font-semibold'>
-                                            {data.name}
-                                        </p>
-                                    </div>
-                                );
-                            })}
+                        <div className='flex flex-row flex-wrap justify-center gap-4'>
+                            {menuDataIndex[stepperIngredients].map(
+                                (data, index) => {
+                                    const ingredients = ingredientsData[data];
+                                    return (
+                                        <div
+                                            className={cn(
+                                                'flex cursor-pointer flex-col items-center gap-4'
+                                            )}
+                                            key={index}
+                                        >
+                                            <Image
+                                                src={ingredients.src}
+                                                alt={ingredients.name}
+                                                width={0}
+                                                height={0}
+                                                sizes='100%'
+                                                quality={20}
+                                                className={cn(
+                                                    'h-auto w-[150px]'
+                                                )}
+                                            />
+                                            <p className='w-[85%] text-center font-acumin text-xs font-semibold'>
+                                                {ingredients.name}
+                                            </p>
+                                        </div>
+                                    );
+                                }
+                            )}
                         </div>
                         <div className='flex w-full flex-col gap-2 bg-[#B7CBAD]/70 p-4 font-acumin'>
                             <p className='text-center font-bold'>

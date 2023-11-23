@@ -44,6 +44,8 @@ export const ExhibitionContextProvider = ({
 
     const [correctCountPos2, setCorrectCountPos2] = useState<number>(0);
 
+    const [answerPos2, setAnswerPos2] = useState<string[]>([]);
+
     const [questionPos4, setQuestionPos4] =
         useState<QuestionType[]>(listQuestionPos4);
 
@@ -65,6 +67,11 @@ export const ExhibitionContextProvider = ({
             'selectedRoleModel',
             JSON.stringify(newSelectedRoleModel)
         );
+    };
+
+    const setAnswerPos2State = (answer: string[]) => {
+        setAnswerPos2(() => answer);
+        localStorage.setItem('answerPos2', JSON.stringify(answer));
     };
 
     const setParticipantSkillState = (
@@ -161,6 +168,12 @@ export const ExhibitionContextProvider = ({
             if (savedData) {
                 setSaved(() => savedData === 'true');
             }
+
+            const answerPos2Data = JSON.parse(
+                localStorage.getItem('answerPos2')!
+            );
+
+            if (answerPos2Data) setAnswerPos2(() => answerPos2Data);
         } catch (e) {
             console.log(e);
             setPosState(0);
@@ -201,6 +214,7 @@ export const ExhibitionContextProvider = ({
         localStorage.removeItem('saved');
         localStorage.removeItem('participantSkill');
         localStorage.removeItem('selectedRoleModel');
+        localStorage.removeItem('answerPos2');
         window.location.reload();
     };
 
@@ -226,7 +240,9 @@ export const ExhibitionContextProvider = ({
         setSelectedRoleModelState,
         populateParticipantSkillData,
         saved,
-        setSavedState
+        setSavedState,
+        answerPos2,
+        setAnswerPos2State
     };
 
     return (

@@ -23,6 +23,8 @@ export interface ExhibitionContextType {
     populateParticipantSkillData: () => ParticipantSkillType;
     saved: boolean;
     setSavedState: (_arg: boolean) => void;
+    answerPos2: string[];
+    setAnswerPos2State: (_arg: string[]) => void;
 }
 
 export interface ParticipantDataType {
@@ -124,5 +126,33 @@ export interface FormGoogleSheetsType {
     No1Skill: string;
     No2Skill: string;
     No3Skill: string;
+    Pos1No1: string;
+    Pos1No2: string;
+    Pos1No3: string;
+    Pos1No4: string;
+    Pos1No5: string;
+    Pos1No6: string;
+    Pos1No7: string;
+    Pos1No8: string;
+    Pos1No9: string;
+    Pos1No10: string;
+    Pos1No11: string;
+    Pos2No1: string;
+    Pos2No2: string;
+    Pos2No3: string;
+    Pos2No4: string;
+    Pos2No5: string;
+    Pos4No1: string;
+    Pos4No2: string;
+    Pos4No3: string;
+    Pos4No4: string;
+    Pos4No5: string;
+    Pos4No6: string;
+    Pos4No7: string;
+    Pos4No8: string;
+    Pos4No9: string;
+    Pos4No10: string;
+    Pos4No11: string;
+    Pos4No12: string;
     Date: string;
 }

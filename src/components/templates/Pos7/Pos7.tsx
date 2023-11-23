@@ -1,8 +1,10 @@
 import { posInfo } from '@/components/constants/pos';
 import { roleModelLists } from '@/components/constants/rolemodel';
+import Credit from '@/components/molecules/Credit/Credit';
 import FooterExhibition from '@/components/molecules/FooterExhibition/FooterExhibition';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
 import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
 import { ExhibitionContext } from '@/contexts/ExhibitionContext/ExhibitionContext';
 import appendSpreadsheet from '@/lib/gsheets';
 import { cn } from '@/lib/utils';
@@ -40,7 +42,7 @@ const RoleModelCard = ({
                         )}
                         %
                     </p>
-                    <p className='flex h-[25%] items-center justify-center px-2 pb-2 text-center font-livvic text-[14px] font-semibold italic'>
+                    <p className='flex h-[25%] items-center justify-center px-2 pb-4 text-center font-livvic text-[14px] font-semibold italic'>
                         {participantSkill![roleModel.value]!.name}
                     </p>
                 </div>
@@ -63,7 +65,10 @@ const Pos7 = () => {
         resetExhibition,
         selectedRoleModel,
         saved,
-        setSavedState
+        setSavedState,
+        questionPos1,
+        questionPos4,
+        answerPos2
     } = useContext(ExhibitionContext)!;
 
     const populateSortedKey = (populated: ParticipantSkillType) => {
@@ -158,7 +163,81 @@ const Pos7 = () => {
                                 No3Skill:
                                     populated![
                                         sorted[2] as keyof ParticipantSkillType
-                                    ].name
+                                    ].name,
+                                Pos1No1: String.fromCharCode(
+                                    65 + questionPos1[0].answer!
+                                ),
+                                Pos1No2: String.fromCharCode(
+                                    65 + questionPos1[1].answer!
+                                ),
+                                Pos1No3: String.fromCharCode(
+                                    65 + questionPos1[2].answer!
+                                ),
+                                Pos1No4: String.fromCharCode(
+                                    65 + questionPos1[3].answer!
+                                ),
+                                Pos1No5: String.fromCharCode(
+                                    65 + questionPos1[4].answer!
+                                ),
+                                Pos1No6: String.fromCharCode(
+                                    65 + questionPos1[5].answer!
+                                ),
+                                Pos1No7: String.fromCharCode(
+                                    65 + questionPos1[6].answer!
+                                ),
+                                Pos1No8: String.fromCharCode(
+                                    65 + questionPos1[7].answer!
+                                ),
+                                Pos1No9: String.fromCharCode(
+                                    65 + questionPos1[8].answer!
+                                ),
+                                Pos1No10: String.fromCharCode(
+                                    65 + questionPos1[9].answer!
+                                ),
+                                Pos1No11: String.fromCharCode(
+                                    65 + questionPos1[10].answer!
+                                ),
+                                Pos4No1: String.fromCharCode(
+                                    65 + questionPos4[0].answer!
+                                ),
+                                Pos4No2: String.fromCharCode(
+                                    65 + questionPos4[1].answer!
+                                ),
+                                Pos4No3: String.fromCharCode(
+                                    65 + questionPos4[2].answer!
+                                ),
+                                Pos4No4: String.fromCharCode(
+                                    65 + questionPos4[3].answer!
+                                ),
+                                Pos4No5: String.fromCharCode(
+                                    65 + questionPos4[4].answer!
+                                ),
+                                Pos4No6: String.fromCharCode(
+                                    65 + questionPos4[5].answer!
+                                ),
+                                Pos4No7: String.fromCharCode(
+                                    65 + questionPos4[6].answer!
+                                ),
+                                Pos4No8: String.fromCharCode(
+                                    65 + questionPos4[7].answer!
+                                ),
+                                Pos4No9: String.fromCharCode(
+                                    65 + questionPos4[8].answer!
+                                ),
+                                Pos4No10: String.fromCharCode(
+                                    65 + questionPos4[9].answer!
+                                ),
+                                Pos4No11: String.fromCharCode(
+                                    65 + questionPos4[10].answer!
+                                ),
+                                Pos4No12: String.fromCharCode(
+                                    65 + questionPos4[11].answer!
+                                ),
+                                Pos2No1: answerPos2[0],
+                                Pos2No2: answerPos2[1],
+                                Pos2No3: answerPos2[2],
+                                Pos2No4: answerPos2[3],
+                                Pos2No5: answerPos2[4]
                             });
                             setSavedState(true);
                         }
@@ -168,7 +247,7 @@ const Pos7 = () => {
 
             {stepper === 1 ? (
                 <>
-                    <div className='flex w-full flex-col gap-8 md:w-[25%]'>
+                    <div className='flex w-full flex-col gap-8 md:w-[40%]'>
                         <div
                             className='flex flex-col gap-4 font-acumin'
                             ref={divRef}
@@ -296,6 +375,17 @@ const Pos7 = () => {
                                 Download
                             </Button>
                         </div>
+
+                        <Image
+                            src='/arrowdown.svg'
+                            alt='arrowdown'
+                            width={0}
+                            height={0}
+                            className='mx-auto h-auto w-[50px]'
+                        />
+
+                        <Separator />
+                        <Credit />
                     </div>
                 </>
             ) : null}

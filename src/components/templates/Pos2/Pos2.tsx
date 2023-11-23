@@ -12,13 +12,11 @@ import { useContext, useState } from 'react';
 const listAnimal = [
     {
         src: '/pos2/harimau.png',
-        nama: `Harimau Sumatra
-        (Panthera Tigris Sumatrae)`
+        nama: 'Harimau Sumatra (Panthera Tigris Sumatrae)'
     },
     {
         src: '/pos2/burung.png',
-        nama: `Burung Tokhtor Sumatra
-        (Carpococcyx Viridis)`
+        nama: 'Burung Tokhtor Sumatra (Carpococcyx Viridis)'
     },
     { src: '/pos2/kijang.png', nama: 'Kijang (Muntiacus Montanus)' },
     { src: '/pos2/tapir.png', nama: 'Tapir Aisa (Tapirus Indicus)' },
@@ -29,8 +27,13 @@ const jawaban = [1, 2, 3, 4, 0];
 
 const Pos2 = () => {
     const [stepper, setStepper] = useState<number>(0);
-    const { setPos, correctCountPos2, setCorrectCountPos2State } =
-        useContext(ExhibitionContext)!;
+    const {
+        setPos,
+        correctCountPos2,
+        setCorrectCountPos2State,
+        answerPos2,
+        setAnswerPos2State
+    } = useContext(ExhibitionContext)!;
     const { toast } = useToast();
 
     const [selected, setSelected] = useState<number | null>(0);
@@ -39,6 +42,12 @@ const Pos2 = () => {
     const [wrong, setWrong] = useState<boolean>(false);
 
     const checkAnswer = () => {
+        if (stepperQuestion === 0 && answerPos2.length !== 0) {
+            setAnswerPos2State([listAnimal[selected!].nama]);
+        } else {
+            setAnswerPos2State([...answerPos2, listAnimal[selected!].nama]);
+        }
+
         if (selected === jawaban[stepperQuestion]) {
             setCanNext(() => true);
             setWrong(() => false);
@@ -97,9 +106,9 @@ const Pos2 = () => {
                             return (
                                 <div
                                     className={cn(
-                                        'mx-auto flex cursor-pointer flex-col items-center justify-center gap-4',
+                                        'flex cursor-pointer flex-col items-center justify-center gap-4',
                                         index === listAnimal.length - 1 &&
-                                            'mx-auto'
+                                            'col-span-2 mx-auto md:col-span-1'
                                     )}
                                     key={index}
                                 >
@@ -123,7 +132,9 @@ const Pos2 = () => {
                                             selected === index &&
                                                 canNext &&
                                                 !wrong &&
-                                                'rounded-[10px] border-[4px] border-green-500'
+                                                'rounded-[10px] border-[4px] border-green-500',
+                                            index === listAnimal.length - 1 &&
+                                                'col-span-2 mx-auto w-[183px] md:col-span-1 md:w-[250px]'
                                         )}
                                         onClick={() => {
                                             if (!wrong && !canNext) {

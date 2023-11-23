@@ -106,7 +106,7 @@ const Pos5 = () => {
                             })}
                         </div>
                         <Button
-                            className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
+                            className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
                             disabled={selected === null}
                             onClick={() => {
                                 if (selected !== null) {
