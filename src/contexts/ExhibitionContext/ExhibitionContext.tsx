@@ -48,7 +48,7 @@ export const ExhibitionContextProvider = ({
         useState<QuestionType[]>(listQuestionPos4);
 
     const [participantSkill, setParticipantSkill] =
-        useState<ParticipantSkillType>(skillConstants);
+        useState<ParticipantSkillType | null>(null);
 
     const [selectedRoleModel, setSelectedRoleModel] = useState<RoleModelType>({
         src: '',
@@ -147,13 +147,6 @@ export const ExhibitionContextProvider = ({
             if (selectedRoleModelData) {
                 setSelectedRoleModel(() => selectedRoleModelData);
             }
-
-            const participantSkillData = JSON.parse(
-                localStorage.getItem('participantSkill')!
-            );
-
-            if (participantSkillData)
-                setParticipantSkill(() => participantSkillData);
         } catch (e) {
             console.log(e);
             setPosState(0);
@@ -161,28 +154,21 @@ export const ExhibitionContextProvider = ({
     };
 
     const populateParticipantSkillData = () => {
-        const tempData = { ...participantSkill };
+        const tempData = { ...skillConstants };
 
         questionPos1.forEach((data) => {
-            tempData[data.choice[data.answer!].value].value++;
+            tempData[data.choice[data.answer!].value]!.value++;
         });
 
         questionPos4.forEach((data) => {
-            tempData[data.choice[data.answer!].value].value++;
+            tempData[data.choice[data.answer!].value]!.value++;
         });
 
-        tempData[selectedRoleModel.value].value++;
+        tempData[selectedRoleModel.value]!.value++;
 
         setParticipantSkillState(tempData);
 
-        // const keysSorted = Object.keys(tempData).sort((a, b) => {
-        //     return (
-        //         tempData[b as keyof ParticipantSkillType].value -
-        //         tempData[a as keyof ParticipantSkillType].value
-        //     );
-        // });
-
-        // return keysSorted;
+        return tempData;
     };
 
     const initiate = () => {

@@ -1,5 +1,6 @@
 'use client';
 
+import { posInfo } from '@/components/constants/pos';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
 import QuestionPos from '@/components/molecules/QuestionPos/QuestionPos';
 import { ExhibitionContext } from '@/contexts/ExhibitionContext/ExhibitionContext';
@@ -14,14 +15,14 @@ const Pos1 = () => {
         <>
             {stepper === 0 ? (
                 <IntroPosInstallation
-                    posInfo={{
-                        name: `Locker of Empathy
-                                   When i Open my Eyes`,
-                        number: 1,
-                        password: 'test',
-                        description: 'Please answer every question in Post 1!'
+                    posInfo={posInfo[1]}
+                    callbackPasswordCorrect={() => {
+                        setStepper(() => 1);
+                        (window as any).scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     }}
-                    callbackPasswordCorrect={() => setStepper(() => 1)}
                 />
             ) : null}
             {stepper === 1 ? (

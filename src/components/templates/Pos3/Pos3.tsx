@@ -1,3 +1,4 @@
+import { posInfo } from '@/components/constants/pos';
 import { Icons } from '@/components/icons/icons';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
 import { Button } from '@/components/ui/button';
@@ -98,15 +99,14 @@ const Pos3 = () => {
         <>
             {stepper === 0 ? (
                 <IntroPosInstallation
-                    posInfo={{
-                        name: `Flora..
-                                I Smell and Taste You`,
-                        number: 3,
-                        password: 'test',
-                        description: `Users smell the flora and guess the name of fauna.
-                        Table is designed like “warung kopi”..`
+                    posInfo={posInfo[3]}
+                    callbackPasswordCorrect={() => {
+                        setStepper(() => 1);
+                        (window as any).scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     }}
-                    callbackPasswordCorrect={() => setStepper(() => 1)}
                 />
             ) : (
                 <>

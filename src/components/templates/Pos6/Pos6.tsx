@@ -1,5 +1,6 @@
 'use client';
 
+import { posInfo } from '@/components/constants/pos';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
 import { ExhibitionContext } from '@/contexts/ExhibitionContext/ExhibitionContext';
 import { useContext, useState } from 'react';
@@ -12,15 +13,14 @@ const Pos6 = () => {
         <>
             {stepper === 0 ? (
                 <IntroPosInstallation
-                    posInfo={{
-                        name: 'Documentary Screening',
-                        number: 6,
-                        password: 'test',
-                        description: 'Watch and soak up the documentary!'
-                    }}
+                    posInfo={posInfo[6]}
                     callbackPasswordCorrect={() => {
                         setStepper(() => 1);
                         setPos(7);
+                        (window as any).scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     }}
                 />
             ) : null}

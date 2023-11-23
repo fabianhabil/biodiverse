@@ -8,7 +8,7 @@ export interface ExhibitionContextType {
     participantData: ParticipantDataType;
     setParticipantData: Dispatch<SetStateAction<ParticipantDataType>>;
     mounted: boolean;
-    participantSkill: ParticipantSkillType;
+    participantSkill: ParticipantSkillType | null;
     questionPos1: QuestionType[];
     setParticipantSkillState: (_arg: ParticipantSkillType) => void;
     setQuestionPos1State: (_arg: QuestionType[]) => void;
@@ -20,7 +20,7 @@ export interface ExhibitionContextType {
     setCorrectCountPos2State: (_arg: number) => void;
     selectedRoleModel: RoleModelType;
     setSelectedRoleModelState: (_arg: RoleModelType) => void;
-    populateParticipantSkillData: () => void;
+    populateParticipantSkillData: () => ParticipantSkillType;
 }
 
 export interface ParticipantDataType {
@@ -95,4 +95,28 @@ export interface RoleModelType {
         | 'planningAndOrganizing'
         | 'communicative'
         | 'teamwork';
+}
+
+export interface FormGoogleSheetsType {
+    Name: string;
+    Email: string;
+    Gender: string;
+    Age: number;
+    Jurusan: string;
+    Instagram: string;
+    Empathy: number;
+    Visionary: number;
+    CriticalThinking: number;
+    CreativeThinking: number;
+    Innovative: number;
+    ComplexProblemSolver: number;
+    RiskTaking: number;
+    Persistence: number;
+    Resilience: number;
+    Leadership: number;
+    PlanningAndOrganizing: number;
+    Communicative: number;
+    Teamwork: number;
+    RoleModel: string;
+    Date: string;
 }

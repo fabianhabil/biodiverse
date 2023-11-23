@@ -1,5 +1,6 @@
 'use client';
 
+import { posInfo } from '@/components/constants/pos';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/components/ui/use-toast';
@@ -75,14 +76,14 @@ const Pos2 = () => {
         <>
             {stepper === 0 ? (
                 <IntroPosInstallation
-                    posInfo={{
-                        name: 'I am Trapped in My Mind',
-                        number: 2,
-                        password: 'test',
-                        description: `Users press “the start button”
-                                     Listen to the sound of fauna, and guess the name of fauna.`
+                    posInfo={posInfo[2]}
+                    callbackPasswordCorrect={() => {
+                        setStepper(() => 1);
+                        (window as any).scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
                     }}
-                    callbackPasswordCorrect={() => setStepper(() => 1)}
                 />
             ) : null}
 
@@ -137,7 +138,7 @@ const Pos2 = () => {
                     </div>
                     <div className='flex flex-row items-center justify-between gap-8'>
                         <Button
-                            disabled={canNext}
+                            disabled={canNext || selected === null}
                             onClick={() => {
                                 if (wrong) {
                                     tryAgain();

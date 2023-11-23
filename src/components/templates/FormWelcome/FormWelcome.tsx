@@ -142,7 +142,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                     value={participantData.instagram}
                 />
                 <Button
-                    className='w-[150px] rounded-[12px] bg-[#639F55] font-bold'
+                    className='w-[150px] rounded-[12px] bg-[#639F55] font-bold hover:bg-[#639F55]/80'
                     onClick={() => {
                         localStorage.setItem(
                             'participantData',

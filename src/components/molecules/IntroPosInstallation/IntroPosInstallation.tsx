@@ -3,7 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/components/ui/use-toast';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface IntroPosInstallationType {
     posInfo: {
@@ -21,6 +21,12 @@ const IntroPosInstallation = ({
 }: IntroPosInstallationType) => {
     const [inputPassword, setInputPassword] = useState<string>('');
     const { toast } = useToast();
+
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            (window as any).scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }, []);
 
     return (
         <>
@@ -40,6 +46,7 @@ const IntroPosInstallation = ({
                     className='mx-auto w-[170px] rounded-[32px] bg-[#BAC24A] text-center font-lucette font-bold text-white placeholder:font-lucette placeholder:text-white md:w-[250px]'
                     placeholder='Enter Passcode'
                     onChange={(e) => setInputPassword(() => e.target.value)}
+                    type='password'
                 />
                 <Button
                     className='mx-auto w-[170px] rounded-[32px] bg-[#727902] px-10 py-4 text-center font-lucette text-lg font-bold text-white hover:bg-[#727902]/80 md:w-[250px]'
