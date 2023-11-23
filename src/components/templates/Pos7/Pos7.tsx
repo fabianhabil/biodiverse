@@ -58,7 +58,9 @@ const Pos7 = () => {
         participantSkill,
         participantData,
         resetExhibition,
-        selectedRoleModel
+        selectedRoleModel,
+        saved,
+        setSavedState
     } = useContext(ExhibitionContext)!;
 
     const populateSortedKey = (populated: ParticipantSkillType) => {
@@ -109,33 +111,38 @@ const Pos7 = () => {
                             top: 0,
                             behavior: 'smooth'
                         });
-                        appendSpreadsheet({
-                            Name: participantData.name,
-                            Age: participantData.age,
-                            Date: new Date().toLocaleString('en-US', {
-                                timeZone: 'Asia/Jakarta'
-                            }),
-                            Email: participantData.email,
-                            Gender: participantData.gender,
-                            Instagram: participantData.instagram,
-                            Jurusan: participantData.jurusan,
-                            RoleModel: selectedRoleModel.name,
-                            Communicative: populated.communicative.value,
-                            ComplexProblemSolver:
-                                populated.complexProblemSolver.value,
-                            CreativeThinking: populated.creativeThinking.value,
-                            CriticalThinking: populated.criticalThinking.value,
-                            Empathy: populated.empathy.value,
-                            Innovative: populated.innovative.value,
-                            Leadership: populated.leadership.value,
-                            Persistence: populated.persistence.value,
-                            PlanningAndOrganizing:
-                                populated.planningAndOrganizing.value,
-                            Resilience: populated.resilience.value,
-                            RiskTaking: populated.riskTaking.value,
-                            Teamwork: populated.teamwork.value,
-                            Visionary: populated.visionary.value
-                        });
+                        if (!saved) {
+                            appendSpreadsheet({
+                                Name: participantData.name,
+                                Age: participantData.age,
+                                Date: new Date().toLocaleString('en-US', {
+                                    timeZone: 'Asia/Jakarta'
+                                }),
+                                Email: participantData.email,
+                                Gender: participantData.gender,
+                                Instagram: participantData.instagram,
+                                Jurusan: participantData.jurusan,
+                                RoleModel: selectedRoleModel.name,
+                                Communicative: populated.communicative.value,
+                                ComplexProblemSolver:
+                                    populated.complexProblemSolver.value,
+                                CreativeThinking:
+                                    populated.creativeThinking.value,
+                                CriticalThinking:
+                                    populated.criticalThinking.value,
+                                Empathy: populated.empathy.value,
+                                Innovative: populated.innovative.value,
+                                Leadership: populated.leadership.value,
+                                Persistence: populated.persistence.value,
+                                PlanningAndOrganizing:
+                                    populated.planningAndOrganizing.value,
+                                Resilience: populated.resilience.value,
+                                RiskTaking: populated.riskTaking.value,
+                                Teamwork: populated.teamwork.value,
+                                Visionary: populated.visionary.value
+                            });
+                            setSavedState(true);
+                        }
                     }}
                 />
             ) : null}

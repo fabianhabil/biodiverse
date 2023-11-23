@@ -21,6 +21,8 @@ export interface ExhibitionContextType {
     selectedRoleModel: RoleModelType;
     setSelectedRoleModelState: (_arg: RoleModelType) => void;
     populateParticipantSkillData: () => ParticipantSkillType;
+    saved: boolean;
+    setSavedState: (_arg: boolean) => void;
 }
 
 export interface ParticipantDataType {

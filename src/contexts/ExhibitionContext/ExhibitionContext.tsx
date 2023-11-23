@@ -56,6 +56,8 @@ export const ExhibitionContextProvider = ({
         value: 'communicative'
     });
 
+    const [saved, setSaved] = useState<boolean>(false);
+
     const setSelectedRoleModelState = (newSelectedRoleModel: RoleModelType) => {
         setSelectedRoleModel(() => newSelectedRoleModel);
         localStorage.setItem(
@@ -92,6 +94,11 @@ export const ExhibitionContextProvider = ({
     const setPosState = (newPos: number) => {
         setPos(() => newPos);
         localStorage.setItem('pos', `${newPos}`);
+    };
+
+    const setSavedState = (newSaved: boolean) => {
+        setSaved(() => true);
+        localStorage.setItem('saved', `${newSaved}`);
     };
 
     const isUserData = (posStateNow: string | null) => {
@@ -147,6 +154,12 @@ export const ExhibitionContextProvider = ({
             if (selectedRoleModelData) {
                 setSelectedRoleModel(() => selectedRoleModelData);
             }
+
+            const savedData = localStorage.getItem('saved')!;
+
+            if (savedData) {
+                setSaved(() => savedData === 'true');
+            }
         } catch (e) {
             console.log(e);
             setPosState(0);
@@ -184,6 +197,9 @@ export const ExhibitionContextProvider = ({
         localStorage.removeItem('questionPos1');
         localStorage.removeItem('correctCountPos2');
         localStorage.removeItem('questionPos4');
+        localStorage.removeItem('saved');
+        localStorage.removeItem('participantSkill');
+        localStorage.removeItem('selectedRoleModel');
         window.location.reload();
     };
 
@@ -207,7 +223,9 @@ export const ExhibitionContextProvider = ({
         setCorrectCountPos2State,
         selectedRoleModel,
         setSelectedRoleModelState,
-        populateParticipantSkillData
+        populateParticipantSkillData,
+        saved,
+        setSavedState
     };
 
     return (
