@@ -15,15 +15,15 @@ export const posInfo = [
         name: 'I am Trapped in My Mind',
         number: 2,
         password: 'fauna',
-        description: `Users press “the start button”
+        description: `Press “the start button”
                      Listen to the sound of fauna, and guess the name of fauna.`
     },
     {
         name: 'While I Smell You',
         number: 3,
         password: 'flora',
-        description: `Users smell the flora and guess the name of fauna.
-        Table is designed like “warung kopi”..`
+        description: `Smell the flora and guess the name of flora.
+        Table is designed like “warung kopi”`
     },
     {
         name: 'Time is Blossom',

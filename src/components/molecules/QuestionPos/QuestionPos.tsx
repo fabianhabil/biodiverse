@@ -29,7 +29,7 @@ const QuestionPos = ({
                 ) : (
                     <>
                         <p
-                            className='w-[350px] p-4 text-center font-lucette text-2xl font-bold text-[#501C62]'
+                            className='w-[350px] p-4 text-center font-lucette text-2xl text-[#501C62]'
                             style={{
                                 background:
                                     'linear-gradient(96deg, rgba(180, 164, 249, 0.20) 4.23%, rgba(48, 0, 254, 0.02) 100%)'
@@ -77,7 +77,7 @@ const QuestionPos = ({
                         <div />
                     ) : (
                         <Button
-                            className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
+                            className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
                             onClick={() =>
                                 setStepperQuestion((state) => state - 1)
                             }
@@ -87,7 +87,7 @@ const QuestionPos = ({
                         </Button>
                     )}
                     <Button
-                        className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
+                        className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
                         disabled={questionPos[stepperQuestion].answer === null}
                         onClick={() => {
                             if (stepperQuestion + 1 === questionPos.length) {

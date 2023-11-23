@@ -36,20 +36,20 @@ const IntroPosInstallation = ({
                         {posInfo.number}
                     </p>
                 </div>
-                <p className='whitespace-pre-line text-center font-lucette text-2xl font-bold md:text-4xl'>
+                <p className='whitespace-pre-line text-center font-lucette text-2xl md:text-4xl'>
                     {posInfo.name}
                 </p>
-                <p className='my-4 whitespace-pre-line text-center font-acumin font-semibold text-[#407E33] md:text-xl'>
+                <p className='my-4 whitespace-pre-line text-center font-acumin text-[#407E33] md:text-xl'>
                     {posInfo.description}
                 </p>
                 <Input
-                    className='mx-auto w-[170px] rounded-[32px] bg-[#BAC24A] text-center font-lucette font-bold text-white placeholder:font-lucette placeholder:text-white md:w-[250px]'
+                    className='mx-auto w-[170px] rounded-[16px] border-black text-center font-acumin text-black placeholder:font-acumin md:w-[250px]'
                     placeholder='Enter Passcode'
                     onChange={(e) => setInputPassword(() => e.target.value)}
                     type='password'
                 />
                 <Button
-                    className='mx-auto w-[170px] rounded-[32px] bg-[#727902] px-10 py-4 text-center font-lucette text-lg font-bold text-white hover:bg-[#727902]/80 md:w-[250px]'
+                    className='mx-auto w-[170px] rounded-[16px] bg-[#639F55] px-10 py-4 text-center font-acumin text-lg text-white hover:bg-[#639F55]/80 md:w-[250px]'
                     onClick={() => {
                         if (inputPassword === posInfo.password) {
                             callbackPasswordCorrect();

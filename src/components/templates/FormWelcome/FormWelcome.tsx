@@ -42,7 +42,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                     className='h-auto w-[200px]'
                 />
                 <Input
-                    className='w-[280px] bg-[#B7CBAD]'
+                    className='w-[280px] rounded-[16px] border-black text-black'
                     placeholder='Name'
                     onChange={(e) =>
                         setParticipantData((state) => ({
@@ -53,7 +53,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                     value={participantData.name}
                 />
                 <Input
-                    className='w-[280px] bg-[#B7CBAD]'
+                    className='w-[280px] rounded-[16px] border-black text-black'
                     placeholder='Email'
                     onChange={(e) =>
                         setParticipantData((state) => ({
@@ -73,10 +73,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                 >
                     <div className='flex items-center space-x-2'>
                         <RadioGroupItem value='Male' id='Male' />
-                        <Label
-                            htmlFor='Male'
-                            className='text-sm font-bold sm:text-base'
-                        >
+                        <Label htmlFor='Male' className='text-sm sm:text-base'>
                             Male
                         </Label>
                     </div>
@@ -84,14 +81,14 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                         <RadioGroupItem value='Female' id='Female' />
                         <Label
                             htmlFor='Female'
-                            className='text-sm font-bold sm:text-base'
+                            className='text-sm sm:text-base'
                         >
                             Female
                         </Label>
                     </div>
                 </RadioGroup>
                 <Input
-                    className='w-[280px] bg-[#B7CBAD]'
+                    className='w-[280px] rounded-[16px] border-black text-black'
                     placeholder='Age'
                     onChange={(e) =>
                         setParticipantData((state) => ({
@@ -122,7 +119,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                                 <RadioGroupItem value={data} id={data} />
                                 <Label
                                     htmlFor={data}
-                                    className='text-sm font-bold sm:text-base'
+                                    className='text-sm sm:text-base'
                                 >
                                     {data}
                                 </Label>
@@ -131,7 +128,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                     })}
                 </RadioGroup>
                 <Input
-                    className='w-[280px] bg-[#B7CBAD]'
+                    className='w-[280px] rounded-[16px] border-black text-black'
                     placeholder='Instagram'
                     onChange={(e) =>
                         setParticipantData((state) => ({
@@ -142,7 +139,7 @@ const FormWelcome = ({ windowSize }: FormWelcomeType) => {
                     value={participantData.instagram}
                 />
                 <Button
-                    className='w-[150px] rounded-[12px] bg-[#639F55] font-bold hover:bg-[#639F55]/80'
+                    className='w-[150px] rounded-[16px] bg-[#639F55] text-lg hover:bg-[#639F55]/80'
                     onClick={() => {
                         localStorage.setItem(
                             'participantData',

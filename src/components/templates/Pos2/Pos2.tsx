@@ -129,7 +129,7 @@ const Pos2 = () => {
                                             }
                                         }}
                                     />
-                                    <p className='w-[85%] text-center font-acumin font-semibold'>
+                                    <p className='w-[85%] text-center font-acumin'>
                                         {data.nama}
                                     </p>
                                 </div>

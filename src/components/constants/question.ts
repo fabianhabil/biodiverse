@@ -2,8 +2,8 @@ import type { QuestionType } from '@/types/exhibition';
 
 export const listQuestionPos1: QuestionType[] = [
     {
-        title: 'image',
-        question: '/pos1/1.png',
+        title: 'text',
+        question: 'Apa hal terpenting bagimu saat ini?',
         choice: [
             { answer: 'Pasangan / Orang yang dikagumi', value: 'riskTaking' },
             { answer: 'Aset dan uang', value: 'criticalThinking' },
@@ -13,8 +13,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/2.png',
+        title: 'text',
+        question: 'Situasi apa yang membuat kamu tidak nyaman?',
         choice: [
             {
                 answer: 'Sesuatu yang belum jelas',
@@ -27,8 +27,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/3.png',
+        title: 'text',
+        question: 'Ketika kamu diberi satu permintaan, kamu akan?',
         choice: [
             {
                 answer: 'Membuat rumah idaman',
@@ -41,8 +41,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/4.png',
+        title: 'text',
+        question: 'Apa yang kamu sukai dari negara ini?',
         choice: [
             {
                 answer: 'Budaya yang beraneka ragam',
@@ -55,8 +55,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/5.png',
+        title: 'text',
+        question: 'Jika terjadi peperangan di negara ini, apa yang akan kamu lakukan?',
         choice: [
             {
                 answer: 'Mencoba untuk berdamai dengan pihak musuh',
@@ -75,8 +75,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/6.png',
+        title: 'text',
+        question: 'Saat terjadi krisis makanan, apa yang akan kamu lakukan?',
         choice: [
             {
                 answer: 'Pergi ke daerah lain',
@@ -95,8 +95,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/7.png',
+        title: 'text',
+        question: 'Apa hal pertama yang akan kamu lakukan ketika kamu terdampar di pulau tidak berpenghuni?',
         choice: [
             {
                 answer: 'Mencari hewan/tumbuhan untuk dimakan',
@@ -118,8 +118,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/8.png',
+        title: 'text',
+        question: 'Seandainya kamu memiliki kebun kopi, apa yang akan dilakukan?',
         choice: [
             {
                 answer: 'Membuat coffee shop',
@@ -141,8 +141,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/9.png',
+        title: 'text',
+        question: 'Peran kamu ketika berkemah bersama teman-teman adalah?',
         choice: [
             {
                 answer: 'Membangun tenda',
@@ -164,8 +164,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/10.png',
+        title: 'text',
+        question: 'Hal apa yang sukai ketika berada di hutan?',
         choice: [
             {
                 answer: 'Karena banyaknya sumber daya',
@@ -187,8 +187,8 @@ export const listQuestionPos1: QuestionType[] = [
         answer: null
     },
     {
-        title: 'image',
-        question: '/pos1/11.png',
+        title: 'text',
+        question: 'Ketika kamu bertemu dengan hewan buas apa yang akan kamu lakukan?',
         choice: [
             {
                 answer: 'Tenang dan mundur secara perlahan',
