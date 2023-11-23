@@ -33,7 +33,7 @@ const Pos5 = () => {
                 <>
                     <div className='flex w-full flex-col items-center justify-center gap-4'>
                         <p className='text-center font-lucette text-2xl font-bold italic md:text-3xl'>
-                            Choose a role model that reflects you!
+                            Role Model
                         </p>
                         <div className='grid grid-cols-3 items-center justify-center gap-2'>
                             {roleModelLists.map((data, index) => {

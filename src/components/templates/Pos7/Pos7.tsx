@@ -1,9 +1,11 @@
 import { posInfo } from '@/components/constants/pos';
 import { roleModelLists } from '@/components/constants/rolemodel';
+import FooterExhibition from '@/components/molecules/FooterExhibition/FooterExhibition';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
 import { Button } from '@/components/ui/button';
 import { ExhibitionContext } from '@/contexts/ExhibitionContext/ExhibitionContext';
 import appendSpreadsheet from '@/lib/gsheets';
+import { cn } from '@/lib/utils';
 import type { ParticipantSkillType, RoleModelType } from '@/types/exhibition';
 import Image from 'next/image';
 import { useContext, useRef, useState } from 'react';
@@ -21,7 +23,7 @@ const RoleModelCard = ({
         <>
             <div
                 style={{
-                    backgroundImage: `url(${roleModel.src})`,
+                    backgroundImage: `url(${roleModel.pos7})`,
                     backgroundRepeat: 'no-repeat',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center'
@@ -52,6 +54,7 @@ const Pos7 = () => {
     const [participantSkillKeySorted, setParticipantSkillKeySorted] = useState<
         string[]
     >([]);
+    const [download, setDownload] = useState<boolean>(false);
 
     const {
         populateParticipantSkillData,
@@ -71,11 +74,14 @@ const Pos7 = () => {
             );
         });
         setParticipantSkillKeySorted(() => sorted);
+
+        return sorted;
     };
 
     const divRef = useRef(null);
 
     const prepareURL = async () => {
+        setDownload(() => true);
         const divElement = divRef.current;
 
         if (!divElement) return;
@@ -93,6 +99,7 @@ const Pos7 = () => {
             anchor.download = 'biodiverse-personality.jpeg';
             anchor.click();
             anchor.remove();
+            setDownload(() => false);
         } catch (reason) {
             console.log(reason);
         }
@@ -106,7 +113,7 @@ const Pos7 = () => {
                     callbackPasswordCorrect={() => {
                         setStepper(() => 1);
                         const populated = populateParticipantSkillData();
-                        populateSortedKey(populated);
+                        const sorted = populateSortedKey(populated);
                         (window as any).scrollTo({
                             top: 0,
                             behavior: 'smooth'
@@ -139,7 +146,19 @@ const Pos7 = () => {
                                 Resilience: populated.resilience.value,
                                 RiskTaking: populated.riskTaking.value,
                                 Teamwork: populated.teamwork.value,
-                                Visionary: populated.visionary.value
+                                Visionary: populated.visionary.value,
+                                No1Skill:
+                                    populated![
+                                        sorted[0] as keyof ParticipantSkillType
+                                    ].name,
+                                No2Skill:
+                                    populated![
+                                        sorted[1] as keyof ParticipantSkillType
+                                    ].name,
+                                No3Skill:
+                                    populated![
+                                        sorted[2] as keyof ParticipantSkillType
+                                    ].name
                             });
                             setSavedState(true);
                         }
@@ -167,7 +186,7 @@ const Pos7 = () => {
                                     <span className='font-bold'>
                                         {participantData.name}'s
                                     </span>{' '}
-                                    type/model is:
+                                    entrepreneurial character
                                 </p>
                                 <p className='text-center text-xl font-extrabold italic'>
                                     {
@@ -182,7 +201,7 @@ const Pos7 = () => {
                                             (data) =>
                                                 data.value ===
                                                 participantSkillKeySorted[0]
-                                        )?.src!
+                                        )?.pos7!
                                     }
                                     alt='logo'
                                     sizes='100%'
@@ -191,8 +210,7 @@ const Pos7 = () => {
                                     className='m-auto h-auto w-[200px]'
                                 />
                                 <p className='text-center text-lg'>
-                                    The top 3 entrepreneurial skills you have
-                                    are:
+                                    Your top 3 entrepreneurial characters are:
                                 </p>
                                 <div className='grid w-full grid-cols-3 grid-rows-1 items-center justify-center gap-2'>
                                     <RoleModelCard
@@ -259,6 +277,9 @@ const Pos7 = () => {
                                         }
                                     />
                                 </div>
+                            </div>
+                            <div className={cn(!download && 'hidden')}>
+                                <FooterExhibition />
                             </div>
                         </div>
                         <div className='flex flex-row justify-between gap-4'>

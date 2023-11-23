@@ -56,7 +56,8 @@ export const listQuestionPos1: QuestionType[] = [
     },
     {
         title: 'text',
-        question: 'Jika terjadi peperangan di negara ini, apa yang akan kamu lakukan?',
+        question:
+            'Jika terjadi peperangan di negara ini, apa yang akan kamu lakukan?',
         choice: [
             {
                 answer: 'Mencoba untuk berdamai dengan pihak musuh',
@@ -96,7 +97,8 @@ export const listQuestionPos1: QuestionType[] = [
     },
     {
         title: 'text',
-        question: 'Apa hal pertama yang akan kamu lakukan ketika kamu terdampar di pulau tidak berpenghuni?',
+        question:
+            'Apa hal pertama yang akan kamu lakukan ketika kamu terdampar di pulau tidak berpenghuni?',
         choice: [
             {
                 answer: 'Mencari hewan/tumbuhan untuk dimakan',
@@ -119,7 +121,8 @@ export const listQuestionPos1: QuestionType[] = [
     },
     {
         title: 'text',
-        question: 'Seandainya kamu memiliki kebun kopi, apa yang akan dilakukan?',
+        question:
+            'Seandainya kamu memiliki kebun kopi, apa yang akan dilakukan?',
         choice: [
             {
                 answer: 'Membuat coffee shop',
@@ -149,7 +152,7 @@ export const listQuestionPos1: QuestionType[] = [
                 value: 'planningAndOrganizing'
             },
             {
-                answer: 'Memasak Makanan',
+                answer: 'Memasak makanan',
                 value: 'empathy'
             },
             {
@@ -165,7 +168,7 @@ export const listQuestionPos1: QuestionType[] = [
     },
     {
         title: 'text',
-        question: 'Hal apa yang sukai ketika berada di hutan?',
+        question: 'Hal apa yang disukai ketika berada di hutan?',
         choice: [
             {
                 answer: 'Karena banyaknya sumber daya',
@@ -180,7 +183,7 @@ export const listQuestionPos1: QuestionType[] = [
                 value: 'communicative'
             },
             {
-                answer: 'Banyaknya hewan yang beraneka ragam',
+                answer: 'Hewan yang beraneka ragam',
                 value: 'empathy'
             }
         ],
@@ -188,7 +191,8 @@ export const listQuestionPos1: QuestionType[] = [
     },
     {
         title: 'text',
-        question: 'Ketika kamu bertemu dengan hewan buas apa yang akan kamu lakukan?',
+        question:
+            'Ketika kamu bertemu dengan hewan buas, apa yang akan kamu lakukan?',
         choice: [
             {
                 answer: 'Tenang dan mundur secara perlahan',
@@ -348,7 +352,7 @@ export const listQuestionPos4: QuestionType[] = [
     {
         title: 'text',
         question:
-            'Apa yang dia pikirkan ketika mengetahuin kakek tersebut adalah seorang Paranormal',
+            'Apa yang dia pikirkan ketika mengetahui kakek tersebut adalah seorang Paranormal',
         choice: [
             {
                 answer: 'Apakah aku akan menjadi tumbal untuk persembahan kampung ini?',

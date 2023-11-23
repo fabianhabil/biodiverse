@@ -42,12 +42,15 @@ export default function IndexPage() {
                     className='scale-[1.9] sm:scale-[1.25] md:scale-[1.4] lg:scale-[.85]'
                     src='/video/biodiverse.mp4'
                 />
-                {/* <p className='absolute right-[27%] top-[65%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-livvic font-semibold text-black md:top-[72%] lg:top-[67%] lg:text-xl'>
+                {/* <p className='absolute right-[27%] top-[65%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-acumin font-semibold text-black md:top-[72%] lg:top-[67%] lg:text-xl'>
                     An Interactive Exhibition
                 </p> */}
-                <p className='absolute left-1/2 top-[62%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-livvic text-xl font-semibold text-[#5A1669] sm:text-2xl md:top-[72%] lg:top-[71%] lg:text-3xl'>
-                    Embrace Your Entrepreneurial Journey
-                </p>
+                <div className='absolute left-1/2 top-[65%] z-10 flex w-max -translate-x-1/2 -translate-y-1/2 flex-col md:top-[72%] lg:top-[71%]'>
+                    <p className='ml-auto font-acumin'>an Interactive Exhibition</p>
+                    <p className='text-center font-acumin text-xl font-semibold text-[#5A1669] sm:text-2xl lg:text-3xl'>
+                        Embrace Your Entrepreneurial Journey
+                    </p>
+                </div>
                 <div
                     className={
                         'absolute z-20 flex w-full flex-col items-center justify-between py-8'
@@ -82,12 +85,12 @@ export default function IndexPage() {
                     </div>
                     <div className='flex flex-col gap-8'>
                         <Button
-                            className='rounded-[30px] bg-[#727902] p-6 font-livvic text-lg font-bold text-white hover:bg-[#727902]/80 sm:px-12 sm:text-xl md:p-8 md:px-16 md:text-2xl'
+                            className='rounded-[30px] bg-[#727902] p-6 font-acumin text-lg font-bold text-white hover:bg-[#727902]/80 sm:px-12 sm:text-xl md:p-8 md:px-16 md:text-2xl'
                             onClick={() => router.replace('/exhibition')}
                         >
                             Get Started!
                         </Button>
-                        <p className='text-center font-livvic text-xs font-bold md:text-base'>
+                        <p className='text-center font-acumin text-xs font-bold md:text-base'>
                             The Innovation Idea Summit 2023 <br />
                             BINUS Entrepreneurship Center @Bandung
                         </p>

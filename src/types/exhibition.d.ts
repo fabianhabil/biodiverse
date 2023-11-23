@@ -97,6 +97,7 @@ export interface RoleModelType {
         | 'planningAndOrganizing'
         | 'communicative'
         | 'teamwork';
+    pos7: string;
 }
 
 export interface FormGoogleSheetsType {
@@ -120,5 +121,8 @@ export interface FormGoogleSheetsType {
     Communicative: number;
     Teamwork: number;
     RoleModel: string;
+    No1Skill: string;
+    No2Skill: string;
+    No3Skill: string;
     Date: string;
 }

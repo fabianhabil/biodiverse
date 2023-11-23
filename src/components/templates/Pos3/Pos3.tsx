@@ -9,7 +9,7 @@ import { useContext, useState } from 'react';
 
 const menuData = [
     {
-        title: 'Mixtura Tea Blend ',
+        title: 'Mixtura Tea Blend',
         ingredients:
             'Sumatran Black tea, Gayo Arabica Coffee, Cacao Nibs, Forget Me Not.',
         vibe: 'A serotonin booster made of three basic brews elements that lifts your mood for a whole day since the first sip.'
@@ -23,54 +23,34 @@ const menuData = [
     {
         title: 'Glow Like That Tea Blend',
         ingredients:
-            'West Java Black Tea, Orange, Rose, Lavender, Marigold, Forget me Not, Bergamot oil.',
-        vibe: 'Tea time, but make it a party! Lady Earl Grey is a burst of flowery fun, turning your cuppa into a carnival for your taste buds.'
+            'West Java Green tea, Dragon Fruit, Cranberry, Hibiscus, Strawberry, Peppermint, Peach Blossom, Lavender, Stevia.',
+        vibe: 'When acid element and red color (it refers to chaotic). Connected with the sweet element that binds flavor, appearing a balanced taste that makes us feel wellbeing, have a spirit, and glow differently (with addition of the gold element to the brew).'
     }
 ];
 const ingredientsData = [
     {
-        src: '/pos3/1.png',
-        name: 'Coffee'
-    },
-    {
-        src: '/pos3/2.png',
-        name: 'Kayu Manis'
-    },
-    {
-        src: '/pos3/3.png',
-        name: 'Bunga Cempaka'
-    },
-    {
-        src: '/pos3/4.png',
-        name: 'Bunga Cendana'
-    },
-    {
         src: '/pos3/5.png',
-        name: 'Cranberry'
+        name: 'Rose'
     },
     {
         src: '/pos3/6.png',
-        name: 'Jasmine'
+        name: 'Lavender'
     },
     {
         src: '/pos3/7.png',
-        name: 'Sereh'
-    },
-    {
-        src: '/pos3/8.png',
-        name: 'Cacao Nibs'
+        name: 'Jasmine'
     },
     {
         src: '/pos3/9.png',
-        name: 'Gayo Arabica Coffe'
+        name: 'Cacao Nibs'
     },
     {
         src: '/pos3/10.png',
-        name: 'West Java Black Tea'
+        name: 'Gayo Arabica Coffee'
     },
     {
         src: '/pos3/11.png',
-        name: 'Bunga Mawar'
+        name: 'West Java Black Tea'
     },
     {
         src: '/pos3/12.png',
@@ -86,7 +66,7 @@ const ingredientsData = [
     },
     {
         src: '/pos3/15.png',
-        name: 'Lavender'
+        name: 'Cranberry'
     }
 ];
 
@@ -154,7 +134,7 @@ const Pos3 = () => {
                                 <div />
                             ) : (
                                 <Button
-                                    className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
+                                    className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
                                     onClick={() =>
                                         setStepperIngredients(
                                             (state) => state - 1
@@ -166,7 +146,7 @@ const Pos3 = () => {
                                 </Button>
                             )}
                             <Button
-                                className='flex rounded-[20px] bg-[#727902] font-lucette hover:bg-[#727902]/80'
+                                className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
                                 onClick={() => {
                                     if (stepperIngredients === 2) {
                                         setPos(4);

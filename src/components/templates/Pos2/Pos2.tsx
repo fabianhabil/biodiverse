@@ -47,7 +47,7 @@ const Pos2 = () => {
             setCanNext(() => true);
             setWrong(() => true);
             toast({
-                title: `Wrong answer! the correct answer is ${
+                title: `Wrong answer! The correct answer is ${
                     listAnimal[jawaban[stepperQuestion]].nama
                 }`,
                 variant: 'destructive'
@@ -90,14 +90,16 @@ const Pos2 = () => {
             {stepper === 1 ? (
                 <div className='flex flex-col items-center justify-center gap-4'>
                     <p className='text-center font-lucette text-2xl font-bold italic md:text-3xl'>
-                        Guess the name of fauna!
+                        Indonesian Fauna
                     </p>
                     <div className='grid grid-cols-2 grid-rows-2 items-start gap-4 md:grid-cols-3'>
                         {listAnimal.map((data, index) => {
                             return (
                                 <div
                                     className={cn(
-                                        'mx-auto flex cursor-pointer flex-col items-center justify-center gap-4'
+                                        'mx-auto flex cursor-pointer flex-col items-center justify-center gap-4',
+                                        index === listAnimal.length - 1 &&
+                                            'mx-auto'
                                     )}
                                     key={index}
                                 >
