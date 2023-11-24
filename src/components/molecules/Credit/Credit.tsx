@@ -44,7 +44,7 @@ const Credit = () => {
                 <p className='mt-4 text-center font-acumin text-lg font-bold'>
                     in Collaboration with:
                 </p>
-                <div className='my-4 flex flex-row flex-wrap items-center justify-between'>
+                <div className='my-4 flex flex-row flex-wrap items-center justify-center gap-4'>
                     <Image
                         src='/logo/lkc.png'
                         alt='logo'

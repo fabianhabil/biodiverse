@@ -357,7 +357,7 @@ const Pos7 = () => {
                                     />
                                 </div>
                             </div>
-                            <div className={cn(!download && 'hidden')}>
+                            <div className={cn('mx-auto', !download && 'hidden')}>
                                 <FooterExhibition />
                             </div>
                         </div>
