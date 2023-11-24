@@ -35,14 +35,14 @@ const RoleModelCard = ({
                 <div className='absolute z-0 h-full w-full rounded-[6px] bg-black opacity-50' />
                 <div className='absolute z-10 m-auto flex h-full w-full flex-col items-stretch justify-between text-center text-white'>
                     <div />
-                    <p className='px-0 pb-2 font-livvic text-[14px] font-semibold italic'>
+                    <p className='px-0 pb-2 font-lucette text-[14px] font-semibold italic'>
                         {Math.floor(
                             (participantSkill![roleModel.value].value / total) *
                                 100
                         )}
                         %
                     </p>
-                    <p className='flex h-[25%] items-center justify-center px-2 pb-4 text-center font-livvic text-[14px] font-semibold italic'>
+                    <p className='flex h-[25%] items-center justify-center px-2 pb-4 text-center font-lucette text-[14px] font-semibold italic'>
                         {participantSkill![roleModel.value]!.name}
                     </p>
                 </div>
