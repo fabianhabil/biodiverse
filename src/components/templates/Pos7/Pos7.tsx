@@ -359,7 +359,8 @@ const Pos7 = () => {
                             </div>
                             <p className='text-center font-acumin'>
                                 Share your experience and tag us @binus_bandung
-                                @idcbinusbandung @pulitzercenter
+                                @idcbinusbandung @binuslibrarybdg
+                                @pulitzercenter
                             </p>
                             <div
                                 className={cn('mx-auto', !download && 'hidden')}
