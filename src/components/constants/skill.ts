@@ -2,13 +2,13 @@ import type { ParticipantSkillType } from '@/types/exhibition';
 
 export const skillConstants: ParticipantSkillType = {
     empathy: { name: 'Empathy', value: 0 },
-    visionary: { name: 'Growth Mindset', value: 0 },
+    visionary: { name: 'Visionary', value: 0 },
     criticalThinking: { name: 'Critical Thinking', value: 0 },
     creativeThinking: {
         name: 'Creative Thinking',
         value: 0
     },
-    innovative: { name: 'Analytical Thinking', value: 0 },
+    innovative: { name: 'Innovative', value: 0 },
     complexProblemSolver: {
         name: 'Complex Problem Solver',
         value: 0
@@ -20,7 +20,7 @@ export const skillConstants: ParticipantSkillType = {
         value: 0
     },
     leadership: { name: 'Leadership', value: 0 },
-    planningAndOrganizing: { name: 'Planning', value: 0 },
+    planningAndOrganizing: { name: 'Planning and Organizing', value: 0 },
     communicative: { name: 'Communicative', value: 0 },
-    teamwork: { name: 'Collaboration', value: 0 }
+    teamwork: { name: 'Teamwork', value: 0 }
 };
