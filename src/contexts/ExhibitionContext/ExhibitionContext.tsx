@@ -119,8 +119,15 @@ export const ExhibitionContextProvider = ({
                 setParticipantData(() => userData);
 
                 if (posStateNow) {
-                    setPosState(Number(posStateNow));
-                    setOnGoing(() => true);
+                    if (posStateNow === '-1') {
+                        setPosState(1);
+                    } else {
+                        setPosState(Number(posStateNow));
+                        // eslint-disable-next-line max-depth
+                        if (posStateNow !== '0') {
+                            setOnGoing(() => true);
+                        }
+                    }
                 } else {
                     setPosState(1);
                 }
