@@ -52,6 +52,13 @@ const Pos2 = () => {
             setCanNext(() => true);
             setWrong(() => false);
             setCorrectCountPos2State(correctCountPos2 + 1);
+            toast({
+                title: `Correct! The answer is ${
+                    listAnimal[jawaban[stepperQuestion]].nama
+                }`,
+                duration: 1000,
+                className: 'bg-green-500 text-white'
+            });
         } else {
             setCanNext(() => true);
             setWrong(() => true);
@@ -59,7 +66,8 @@ const Pos2 = () => {
                 title: `Wrong answer! The correct answer is ${
                     listAnimal[jawaban[stepperQuestion]].nama
                 }`,
-                variant: 'destructive'
+                variant: 'destructive',
+                duration: 1000
             });
         }
     };

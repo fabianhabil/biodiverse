@@ -249,7 +249,10 @@ const Pos7 = () => {
                 <>
                     <div className='flex w-full flex-col gap-8 md:w-[40%]'>
                         <div
-                            className='flex flex-col gap-4 font-acumin'
+                            className={cn(
+                                'flex flex-col gap-4 font-acumin',
+                                download && 'w-[450px]'
+                            )}
                             ref={divRef}
                         >
                             <Image

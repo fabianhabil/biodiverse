@@ -28,15 +28,22 @@ const QuestionPos = ({
                     </>
                 ) : (
                     <>
-                        <p
-                            className='w-[350px] p-4 text-center font-lucette text-2xl text-[#501C62]'
-                            style={{
-                                background:
-                                    'linear-gradient(96deg, rgba(180, 164, 249, 0.20) 4.23%, rgba(48, 0, 254, 0.02) 100%)'
-                            }}
-                        >
-                            {questionPos[stepperQuestion].question}
-                        </p>
+                        <div className='flex flex-col items-center gap-4'>
+                            <div className='flex h-[75px] w-[75px] items-center justify-center rounded-[50%] bg-[#421E5E] font-bold text-white'>
+                                <p className='font-lucette text-2xl md:text-4xl'>
+                                    {stepperQuestion + 1}
+                                </p>
+                            </div>
+                            <p
+                                className='w-[350px] p-4 text-center font-lucette text-2xl text-[#501C62]'
+                                style={{
+                                    background:
+                                        'linear-gradient(96deg, rgba(180, 164, 249, 0.20) 4.23%, rgba(48, 0, 254, 0.02) 100%)'
+                                }}
+                            >
+                                {questionPos[stepperQuestion].question}
+                            </p>
+                        </div>
                     </>
                 )}
                 <div className='flex w-[320px] flex-col gap-4'>
