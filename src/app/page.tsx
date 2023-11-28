@@ -10,19 +10,20 @@ export default function IndexPage() {
     const windowSize = WindowSize();
     const router = useRouter();
 
+    // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
     const [mounted, setMounted] = useState<boolean>(false);
 
     useEffect(() => {
         setMounted(() => true);
     }, []);
 
-    if (!mounted) return null;
+    // if (!mounted) return null;
 
     return (
         <>
             <div
                 className={
-                    'relative h-screen w-screen overflow-hidden overscroll-none bg-[#F6EFE7]'
+                    'relative min-h-screen w-screen overflow-hidden overscroll-none bg-[#F6EFE7]'
                 }
             >
                 <video
@@ -33,7 +34,9 @@ export default function IndexPage() {
                     style={{
                         position: 'absolute',
                         width: '100%',
-                        height: `${windowSize.innerHeight}px`,
+                        height: !windowSize?.innerHeight
+                            ? '100vh'
+                            : `${windowSize?.innerHeight}px`,
                         zIndex: 10,
                         aspectRatio: 1,
                         backgroundPosition: 'absolute',
@@ -42,9 +45,6 @@ export default function IndexPage() {
                     className='scale-[1.9] sm:scale-[1.25] md:scale-[1.4] lg:scale-[.85]'
                     src='/video/biodiverse.mp4'
                 />
-                {/* <p className='absolute right-[27%] top-[65%] z-10 w-max -translate-x-1/2 -translate-y-1/2 text-center font-acumin font-semibold text-black md:top-[72%] lg:top-[67%] lg:text-xl'>
-                    An Interactive Exhibition
-                </p> */}
                 <div className='absolute left-1/2 top-[65%] z-10 flex w-max -translate-x-1/2 -translate-y-1/2 flex-col md:top-[72%] lg:top-[71%]'>
                     <p className='ml-auto font-acumin'>
                         an Interactive Exhibition
@@ -57,7 +57,11 @@ export default function IndexPage() {
                     className={
                         'absolute z-20 flex w-full flex-col items-center justify-between py-8'
                     }
-                    style={{ minHeight: `${windowSize.innerHeight}px` }}
+                    style={{
+                        minHeight: !windowSize?.innerHeight
+                            ? '100vh'
+                            : `${windowSize?.innerHeight}px`
+                    }}
                 >
                     <div className='flex flex-row items-start gap-8 px-8'>
                         <Image
