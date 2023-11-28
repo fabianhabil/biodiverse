@@ -23,6 +23,13 @@ const ExhibitionPage = () => {
         initiate();
     }, []);
 
+    useEffect(() => {
+        (window as any).scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }, [pos]);
+
     if (!mounted) return null;
 
     return (
