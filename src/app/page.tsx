@@ -15,6 +15,10 @@ export default function IndexPage() {
 
     useEffect(() => {
         setMounted(() => true);
+        (window as any).scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     }, []);
 
     // if (!mounted) return null;
