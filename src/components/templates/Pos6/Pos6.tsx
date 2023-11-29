@@ -68,14 +68,6 @@ const Pos6 = () => {
                                 sizes='100%'
                                 className='h-auto w-auto md:w-[200px]'
                             />
-                            <Image
-                                src='/pos6/time3.png'
-                                alt='poster'
-                                width={0}
-                                height={0}
-                                sizes='100%'
-                                className='h-auto w-auto md:w-[200px]'
-                            />
                         </div>
                         <Button
                             className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
