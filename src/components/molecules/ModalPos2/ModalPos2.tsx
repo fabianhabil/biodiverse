@@ -31,7 +31,7 @@ const ModalPos2 = ({
                         </p>
                         <div
                             className={cn(
-                                'flex flex-row items-stretch gap-4',
+                                'flex flex-row items-start gap-4',
                                 wrongAnswer
                                     ? 'justify-between'
                                     : 'justify-center'
@@ -39,7 +39,7 @@ const ModalPos2 = ({
                         >
                             <div
                                 className={cn(
-                                    'flex flex-col items-center justify-center gap-4'
+                                    'flex flex-1 flex-col items-center justify-center gap-4'
                                 )}
                             >
                                 <Image
@@ -62,7 +62,7 @@ const ModalPos2 = ({
                             {wrongAnswer && (
                                 <div
                                     className={cn(
-                                        'flex flex-col items-center justify-center gap-4'
+                                        'flex flex-1 flex-col items-center justify-center gap-4'
                                     )}
                                 >
                                     <Image
