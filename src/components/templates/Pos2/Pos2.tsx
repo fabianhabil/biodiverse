@@ -2,8 +2,8 @@
 
 import { posInfo } from '@/components/constants/pos';
 import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/IntroPosInstallation';
+import ModalPos2 from '@/components/molecules/ModalPos2/ModalPos2';
 import { Button } from '@/components/ui/button';
-import { useToast } from '@/components/ui/use-toast';
 import { ExhibitionContext } from '@/contexts/ExhibitionContext/ExhibitionContext';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
@@ -34,7 +34,6 @@ const Pos2 = () => {
         answerPos2,
         setAnswerPos2State
     } = useContext(ExhibitionContext)!;
-    const { toast } = useToast();
 
     const [selected, setSelected] = useState<number | null>(0);
     const [stepperQuestion, setStepperQuestion] = useState<number>(0);
@@ -52,23 +51,23 @@ const Pos2 = () => {
             setCanNext(() => true);
             setWrong(() => false);
             setCorrectCountPos2State(correctCountPos2 + 1);
-            toast({
-                title: `Correct! The answer is ${
-                    listAnimal[jawaban[stepperQuestion]].nama
-                }`,
-                duration: 1000,
-                className: 'bg-green-500 text-white'
-            });
+            // toast({
+            //     title: `Correct! The answer is ${
+            //         listAnimal[jawaban[stepperQuestion]].nama
+            //     }`,
+            //     duration: 1000,
+            //     className: 'bg-green-500 text-white'
+            // });
         } else {
             setCanNext(() => true);
             setWrong(() => true);
-            toast({
-                title: `Wrong answer! The correct answer is ${
-                    listAnimal[jawaban[stepperQuestion]].nama
-                }`,
-                variant: 'destructive',
-                duration: 1000
-            });
+            // toast({
+            //     title: `Wrong answer! The correct answer is ${
+            //         listAnimal[jawaban[stepperQuestion]].nama
+            //     }`,
+            //     variant: 'destructive',
+            //     duration: 1000
+            // });
         }
     };
 
@@ -105,81 +104,85 @@ const Pos2 = () => {
             ) : null}
 
             {stepper === 1 ? (
-                <div className='flex flex-col items-center justify-center gap-4'>
-                    <p className='text-center font-lucette text-2xl font-bold italic md:text-3xl'>
-                        Indonesian Fauna
-                    </p>
-                    <div className='grid grid-cols-2 grid-rows-2 items-start gap-4 md:grid-cols-3'>
-                        {listAnimal.map((data, index) => {
-                            return (
-                                <div
-                                    className={cn(
-                                        'flex cursor-pointer flex-col items-center justify-center gap-4',
-                                        index === listAnimal.length - 1 &&
-                                            'col-span-2 mx-auto md:col-span-1'
-                                    )}
-                                    key={index}
-                                >
-                                    <Image
-                                        src={data.src}
-                                        alt={data.nama}
-                                        width={0}
-                                        height={0}
-                                        sizes='100%'
+                <>
+                    <div className='flex flex-col items-center justify-center gap-4'>
+                        <p className='text-center font-lucette text-2xl font-bold italic md:text-3xl'>
+                            Indonesian Fauna
+                        </p>
+                        <div className='grid grid-cols-2 grid-rows-2 items-start gap-4 md:grid-cols-3'>
+                            {listAnimal.map((data, index) => {
+                                return (
+                                    <div
                                         className={cn(
-                                            'h-auto w-[250px]',
-                                            selected === index &&
-                                                'rounded-[10px] border-[4px] border-blue-500',
-                                            selected === index &&
-                                                wrong &&
-                                                'rounded-[10px] border-[4px] border-red-500',
-                                            wrong &&
-                                                jawaban[stepperQuestion] ===
-                                                    index &&
-                                                'rounded-[10px] border-[4px] border-green-500',
-                                            selected === index &&
-                                                canNext &&
-                                                !wrong &&
-                                                'rounded-[10px] border-[4px] border-green-500',
+                                            'flex cursor-pointer flex-col items-center justify-center gap-4',
                                             index === listAnimal.length - 1 &&
-                                                'col-span-2 mx-auto w-[183px] md:col-span-1 md:w-[250px]'
+                                                'col-span-2 mx-auto md:col-span-1'
                                         )}
-                                        onClick={() => {
-                                            if (!wrong && !canNext) {
-                                                setSelected(() => index);
-                                            }
-                                        }}
-                                    />
-                                    <p className='w-[85%] text-center font-acumin'>
-                                        {data.nama}
-                                    </p>
-                                </div>
-                            );
-                        })}
+                                        key={index}
+                                    >
+                                        <Image
+                                            src={data.src}
+                                            alt={data.nama}
+                                            width={0}
+                                            height={0}
+                                            sizes='100%'
+                                            className={cn(
+                                                'h-auto w-[250px]',
+                                                selected === index &&
+                                                    'rounded-[10px] border-[4px] border-blue-500',
+                                                selected === index &&
+                                                    wrong &&
+                                                    'rounded-[10px] border-[4px] border-red-500',
+                                                wrong &&
+                                                    jawaban[stepperQuestion] ===
+                                                        index &&
+                                                    'rounded-[10px] border-[4px] border-green-500',
+                                                selected === index &&
+                                                    canNext &&
+                                                    !wrong &&
+                                                    'rounded-[10px] border-[4px] border-green-500',
+                                                index ===
+                                                    listAnimal.length - 1 &&
+                                                    'col-span-2 mx-auto w-[183px] md:col-span-1 md:w-[250px]'
+                                            )}
+                                            onClick={() => {
+                                                if (!wrong && !canNext) {
+                                                    setSelected(() => index);
+                                                }
+                                            }}
+                                        />
+                                        <p className='w-[85%] text-center font-acumin'>
+                                            {data.nama}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        <div className='flex flex-row items-center justify-between gap-8'>
+                            <Button
+                                disabled={canNext || selected === null}
+                                onClick={() => {
+                                    if (wrong) {
+                                        tryAgain();
+                                    } else {
+                                        checkAnswer();
+                                    }
+                                }}
+                                className='bg-[#639F55] px-8 py-4 font-lucette text-xl font-bold hover:bg-[#639F55]/80'
+                            >
+                                Check
+                            </Button>
+                        </div>
                     </div>
-                    <div className='flex flex-row items-center justify-between gap-8'>
-                        <Button
-                            disabled={canNext || selected === null}
-                            onClick={() => {
-                                if (wrong) {
-                                    tryAgain();
-                                } else {
-                                    checkAnswer();
-                                }
-                            }}
-                            className='bg-[#639F55] px-8 py-4 font-lucette text-xl font-bold hover:bg-[#639F55]/80'
-                        >
-                            Check
-                        </Button>
-                        <Button
-                            disabled={!canNext}
-                            onClick={next}
-                            className='bg-[#639F55] px-8 py-4 font-lucette text-xl font-bold hover:bg-[#639F55]/80'
-                        >
-                            Next
-                        </Button>
-                    </div>
-                </div>
+
+                    <ModalPos2
+                        defaultOpen={canNext}
+                        next={next}
+                        wrongAnswer={wrong}
+                        answer={listAnimal[selected ?? 0]}
+                        correctAnswer={listAnimal[jawaban[stepperQuestion]]}
+                    />
+                </>
             ) : null}
 
             {stepper === 2 ? (
