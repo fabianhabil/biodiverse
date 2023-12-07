@@ -31,7 +31,7 @@ const Pos6 = () => {
                 <>
                     <div className='flex w-full max-w-[450px] flex-col gap-2'>
                         <Image
-                            src='/pos6/poster.jpeg'
+                            src='/pos6/poster.png'
                             alt='poster'
                             width={0}
                             height={0}
@@ -41,7 +41,7 @@ const Pos6 = () => {
                         <p className='mt-2 font-lucette text-2xl font-bold'>
                             The River Never Stops Flowing
                         </p>
-                        <p className='font-acumin text-xl'>Sinopsis</p>
+                        <p className='font-acumin text-xl'>Synopsis</p>
                         <p className='text-justify font-acumin'>
                             Mandailing Jaya Coffee Cooperative (KOMANJA) is
                             developed to revive Mandailing coffee's renown and
