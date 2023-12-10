@@ -5,6 +5,7 @@ import IntroPosInstallation from '@/components/molecules/IntroPosInstallation/In
 import { Button } from '@/components/ui/button';
 import { ExhibitionContext } from '@/contexts/ExhibitionContext/ExhibitionContext';
 import Image from 'next/image';
+import Link from 'next/link';
 import { useContext, useState } from 'react';
 
 const Pos6 = () => {
@@ -43,13 +44,13 @@ const Pos6 = () => {
                         </p>
                         <p className='font-acumin text-xl'>Synopsis</p>
                         <p className='text-justify font-acumin'>
-                            Mandailing Jaya Coffee Cooperative (KOMANJA) is
+                            Mandailing Jaya Coffee Cooperative (KOMANJA) was
                             developed to revive Mandailing coffee's renown and
                             champion the mitigation of environmental degradation
                             through public education about viable economic
                             alternatives. Ucok Godang and Sandi Matondang, as
-                            founder of cooperative, reflects on the condition of
-                            cooperative today.
+                            founder of the cooperative, reflect on the condition
+                            of cooperative today.
                         </p>
                         <div className='mb-4 mt-2 flex flex-row flex-wrap items-center justify-center gap-4'>
                             <Image
@@ -69,6 +70,18 @@ const Pos6 = () => {
                                 className='h-auto w-auto md:w-[200px]'
                             />
                         </div>
+                        <p className='mb-4 text-justify font-acumin'>
+                            The story of Mandailing Jaya Cooperative can also
+                            read at{' '}
+                            <Link
+                                href='https://rainforestjournalismfund.org/projects/planting-coffee-maintaining-sustainability-batang-gadis-national-park?_gl=1*y1zast*_ga*NDUxODI0ODgxLjE3MDE2NTQwNDE.*_ga_ZYQYTZTT61*MTcwMjE3OTAwNy43LjEuMTcwMjE3OTA0OC4wLjAuMA'
+                                className='underline'
+                                target='_blank'
+                            >
+                                Planting Coffee, Maintaining Sustainability at
+                                Batang Gadis National Park by Prayugo Utomo
+                            </Link>
+                        </p>
                         <Button
                             className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
                             onClick={() => {
