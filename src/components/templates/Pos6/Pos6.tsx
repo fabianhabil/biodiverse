@@ -71,16 +71,17 @@ const Pos6 = () => {
                             />
                         </div>
                         <p className='mb-4 text-justify font-acumin'>
-                            The story of Mandailing Jaya Cooperative can also
-                            read at{' '}
+                            The story of Mandailing Jaya Cooperative is
+                            available at{' '}
                             <Link
                                 href='https://rainforestjournalismfund.org/projects/planting-coffee-maintaining-sustainability-batang-gadis-national-park?_gl=1*y1zast*_ga*NDUxODI0ODgxLjE3MDE2NTQwNDE.*_ga_ZYQYTZTT61*MTcwMjE3OTAwNy43LjEuMTcwMjE3OTA0OC4wLjAuMA'
                                 className='underline'
                                 target='_blank'
                             >
                                 Planting Coffee, Maintaining Sustainability at
-                                Batang Gadis National Park by Prayugo Utomo
-                            </Link>
+                                Batang Gadis National Park
+                            </Link>{' '}
+                            by Prayugo Utomo
                         </p>
                         <Button
                             className='flex rounded-[16px] bg-[#639F55] font-acumin hover:bg-[#639F55]/80'
